@@ -32,7 +32,7 @@ from an alphabet of 26 characters, each corresponding to the values 1 to 26.
 Let `S(i, j)` be the value of the HVLCS of
 the first `i` characters in `A` and the first `j` characters in `B`.
 
-As a base case, `S(i, 0) = 0` or `S(0, j) = 0` for any `i` or `j`,
+As a base case, `S(i, 0) = 0` and `S(0, j) = 0` for any `i` or `j`,
 since no common sequence can be formed with an empty string.
 
 Consider `S(i, j)`. There are two cases:
@@ -68,7 +68,8 @@ S(i, j) = max(S(i-1, j), S(i, j-1))
 **Final Equation:**
 
 ```
-S(i, j) = { S(i-1, j-1) + value(A[i])     if A[i] = B[j]
+S(i, j) = { 0                             if i = 0 or j = 0
+            S(i-1, j-1) + value(A[i])     if A[i] = B[j]
             max(S(i-1, j), S(i, j-1))     if A[i] ≠ B[j] }
 ```
 
