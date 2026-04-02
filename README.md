@@ -20,6 +20,13 @@ Note that due to the use of string construction instead of backtracking,
 the runtime of this implementation is actually `O(na*nb*min(na,nb)^2)`,
 assuming string concatenation is quadratic on the length of the string.
 
+The following graph was generated with `./hvlcs.py --graph`.
+Note that running this command will overwrite `graph.svg`.
+Both strings have the same length, and are are generated randomly
+from an alphabet of 26 characters, each corresponding to the values 1 to 26.
+
+![Graph of String Length vs. Time](graph.svg)
+
 ## Recurrence Equation
 
 Let `S(i, j)` be the value of the HVLCS of
